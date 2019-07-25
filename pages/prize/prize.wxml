@@ -1,0 +1,37 @@
+<!--pages/prize/prize.wxml-->
+<import src="../fuyong/fuyong.wxml" />
+<view class='baise' wx:if="{{all_info_data==''}}"></view>
+<view>
+  <!-- <view class='prize_bg'></view> -->
+  <view class='prize_header'>
+    <image src='../img/prize/bg.png' class='prize_img'></image>
+    <view class='prize_num'>{{all_num}}</view>
+    <view class='prize_text'>邀请旅伴奖励积分</view>
+  </view>
+  <view class='prize_list'>
+    <view class='prize_list_item' wx:for="{{all_info_data}}">
+      <view class='prize_list_left'>
+        <text class='prize_title' wx:if="{{item.type==1}}">邀请旅伴注册</text>
+        <text class='prize_title' wx:if="{{item.type==4}}">旅伴购买</text>
+        <text class='prize_title' wx:if="{{item.type==5}}">旅伴的旅伴购买</text>
+        <text class='prize_stu' wx:if="{{item.type == 5}}">间接旅伴</text>
+        <text class='prize_stu' wx:else>直接旅伴</text>
+        <view class='prize_nick'>{{item.username}}</view>
+        <view class='prize_time'>{{item.create_time}}</view>
+      </view>
+      <view class='prize_list_right'> 
+        <view class='prize_list_num' wx:if='{{item.type == 6}}'>-{{item.score}}<text>积分</text></view>
+        <view class='prize_list_num' wx:else>+{{item.score}}<text>积分</text></view>
+      </view>
+    </view>
+    <!-- <view class='hint_message' wx:if="{{all_info_data.length == 0 }}">暂无资源</view> -->
+    <image src='../img/home/wu_jifen.png' class='wu_xianlu' wx:if="{{all_info_data == '' }}"></image>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

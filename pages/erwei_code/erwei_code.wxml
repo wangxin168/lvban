@@ -1,0 +1,38 @@
+<!--pages/erwei_code/erwei_code.wxml-->
+<import src="../fuyong/fuyong.wxml" />
+<view class='ewm_box'>
+  <view class='ewm_header'>
+    <view class='ewm_header_left'>
+      <image src='{{canvastx}}' class='ewm_header_left_img'></image>
+    </view>
+    <view class='ewm_header_right'>
+      <view class='nike'>{{nike}}</view>
+      <view class='tuijian'>向你推荐</view>
+    </view>
+  </view>
+  <view class='ewm_bg'>
+    <image src='../img/person/bg.jpg' class='ewm_bg_img'></image>
+  </view>
+  <view class='ewm_cont'>
+    <view class='ewm_cont_left'>
+
+      <view class='ewm_text_top'>免费免费</view>
+      <view>免费的旅游线路等你来领取</view>
+      <view class='ewm_text_bottom'>旅伴同行</view>
+    </view>
+    <view class='ewm_cont_right'>
+      <image src='{{canvasewm}}' class='myewm_img'></image>
+    </view>
+  </view>
+  <view class='canvas_box {{canvas_type==1?canvas_hide:""}}'>
+    <canvas canvas-id='canvas' class="my_canvas"></canvas>
+  </view>
+  <view class='yaoqing_btn' bindtap='canvasdraw'>立即邀请好友</view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

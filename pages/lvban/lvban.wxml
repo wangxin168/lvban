@@ -1,0 +1,45 @@
+<!--pages/lvban/lvban.wxml-->
+<import src="../fuyong/fuyong.wxml" />
+<view class='baise' wx:if="{{all_info_data==''}}"></view>
+<view>
+  <!-- <view class='bg_box'></view> -->
+  
+  <view class='lv_title_box'>
+    <view class='lv_title_item {{cur_type == 1?"on":""}}' bindtap='change_type' data-index="1">
+      <text>直接旅伴({{type_one_num}})</text>
+    </view>
+    <view class='lv_title_item {{cur_type == 2?"on":""}}' bindtap='change_type' data-index="2">
+      <text>间接旅伴({{type_two_num}})</text>
+    </view>
+  </view>
+  <view class='lv_cont_box'>
+    <image src='../img/home/wu_lvban.png' class='wu_xianlu' wx:if="{{all_info_data == '' }}"></image>
+    <view class='lv_cont_item' wx:for='{{all_info_data}}' wx:key="index">
+      <view class='lv_cont_left'>
+        <image src='{{item.avatar}}' class='lv_tx'></image>
+      </view>
+      <view class='lv_cont_right'>
+        <view class='lv_cont_right_info'>
+          <text class='nick'>{{item.nickname}}</text>
+          <text class='line' wx:if="{{item.is_buy==0}}">未购买路线</text>
+          <text class='line' wx:if="{{item.is_buy==1}}">已购买路线</text>
+        </view>
+        <view class='mytime'>
+        <text>{{item.create_time}}</text>
+        <text>成为我的</text>
+        <text wx:if='{{cur_type == 1}}'>直接</text>
+        <text wx:if='{{cur_type == 2}}'>间接</text>
+        <text>旅伴</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='hint_message' wx:if="{{all_info_data.length == 0 }}">暂无资源</view> -->
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

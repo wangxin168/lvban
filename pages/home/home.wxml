@@ -1,0 +1,60 @@
+<!--pages/home/home.wxml-->
+<import src="../fuyong/fuyong.wxml" />
+<view style='position: {{position}}'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='my_swiper_box' circular="true">
+    <block wx:for="{{imgUrls}}" wx:key='index'>
+      <swiper-item bindtap="tiaozhuan" data-type="{{item.type}}" data-route_id="{{item.route_id}}" data-id="{{item.id}}">
+        <image src="{{item.img_thumb}}" class="slide-image my_swiper_img" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='list_box'>
+    <view class='list_item' bindtap='lvyou' data-class_id='1' data-name="1">
+      <image src='../img/home/list1.png'></image>
+      <view class='list_text'>点击查看详情</view>
+    </view>
+    <view class='list_item' bindtap='lvyou' data-class_id='2' data-name="2">
+      <image src='../img/home/list2.png'></image>
+      <view class='list_text'>点击查看详情</view>
+    </view>
+    <view class='list_item' bindtap='lvyou' data-class_id='3' data-name="3">
+      <image src='../img/home/list3.png'></image>
+      <view class='list_text'>点击查看详情</view>
+    </view>
+  </view>
+  <view class='list_box'>
+    <view class='list_item2' bindtap='mianfei'>
+      <image src='../img/home/list4.png'></image>
+      <view class='list_text2'>点击查看详情</view>
+    </view>
+    <view class='list_item2' bindtap='lvban'>
+      <image src='../img/home/list5.png'></image>
+      <view class='list_text2'>点击查看详情</view>
+    </view>
+  </view>
+  <!-- 推荐路线 -->
+  <view class='route_line'>
+    <text class='route_line_pre'>推荐线路</text>
+    <image src='../img/home/bg.png' class='route_bg'></image>
+  </view>
+  <!-- ul  li -->
+  <view class='tui_ul'>
+    <image src='../img/home/wu_xianlu.png' class='wu_xianlu' wx:if="{{xianlu==''}}"></image>
+    <view class='tui_li' bindtap='luxian' wx:for='{{xianlu}}' wx:key='index' data-route_id="{{item.route_id}}">
+      <image src='{{item.images_thumb}}' class='tui_img' mode="aspectFill"></image>
+      <view class='tui_tit'>{{item.route_name}}</view>
+      <view class='tui_lu'>线路ID{{item.route_id}}</view>
+      <view class='tui_jian'>出行可获{{item.adult_integral}}积分</view>
+      <view class='tui_price'>￥
+        <view class='price_da'>{{item.adult_price}}</view>/成人</view>
+      <view class='tui_chu'>{{item.departure_place}}出发</view>
+    </view>
+  </view>
+</view>
+
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>

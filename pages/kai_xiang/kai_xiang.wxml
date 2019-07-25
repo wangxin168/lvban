@@ -1,0 +1,68 @@
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<import src="../../towxml/entry.wxml"/>
+<import src="../fuyong/fuyong.wxml" />
+<view class='banner_box'>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{img_thumb}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='banner_text'>{{route_info.departure_place}}出发</view>
+</view>
+<view class='xianlu' style='margin-top:22rpx;'>
+  <text class='xianlu_tit'>{{route_info.route_name}}</text>
+  <button open-type='share'>
+    <image src='../img/home/fenxiang.png'></image>
+  </button>
+</view>
+<view class='xianlu' style='margin-top:6rpx;'>
+  <text class='xianlu_id'>线路ID{{route_info.route_id}}</text>
+  <!-- <text class='xianlu_and'>旅伴一起来出游</text> -->
+  <button open-type='share'>旅伴一起来出游</button>
+</view>
+<!-- <view class='xianlu' style='margin-top:9rpx;'>
+  <text class='xianlu_go'>{{route_info.departure_place}}出发</text>
+</view> -->
+<view class='yungaold' style='margin-top:16rpx;'>
+  <view>
+    <text class='old'>价值</text>
+    <text class='much' style='font-size: 38rpx;color: #D34C4C;'>{{route_info.price}}元</text>
+  </view>
+</view>
+<view class='yungaold' style='border-bottom: 1px solid #ECECEC;padding:0 12rpx 20rpx 0;'>
+  <view>
+    <text class='old'>出发时间:</text>
+    <text class='much'>{{route_info.departure_time}}</text>
+  </view>
+
+</view>
+<!-- 未出行  已出行 -->
+<!-- 进度条 -->
+<view class='xinxi'>
+  <view>中奖者：</view>
+  <image src='{{route_info.avatar}}'></image>
+  <view>{{route_info.nickname}}</view>
+</view>
+
+<view class='xian'></view>
+<!-- 推荐路线 -->
+<view class='route_line'>
+  <text class='route_line_pre'>详情</text>
+  <image src='../img/home/fangda.png'></image>
+</view>
+<!-- 文案 -->
+<view class='xianlu_con'>
+  <!-- <template is="wxParse" data="{{wxParseData:contents.nodes}}" /> -->
+  <template is="entry" data="{{...article}}"/>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

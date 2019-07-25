@@ -1,0 +1,22 @@
+<!--pages/lvyou/lvyou.wxml-->
+<!-- <text>pages/lvyou/lvyou.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<!-- ul  li -->
+  <view class='tui_ul'>
+  <image src='../img/home/wu_xianlu.png' class='wu_xianlu' wx:if="{{list==''}}"></image>
+    <view class='tui_li' bindtap='luxian' wx:for="{{list}}" wx:key="index" data-route_id="{{item.route_id}}">
+      <image src='{{item.images_thumb}}' class='tui_img' mode="aspectFill"></image>
+      <view class='tui_tit'>{{item.route_name}}</view>
+      <view class='tui_lu'>线路ID{{item.route_id}}</view>
+      <view class='tui_jian'>出行可获{{item.adult_integral}}积分</view>
+      <view class='tui_price'>￥<view class='price_da'>{{item.adult_price}}</view>/成人</view>
+      <view class='tui_chu'>{{item.departure_place}}出发</view>
+    </view>
+  </view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

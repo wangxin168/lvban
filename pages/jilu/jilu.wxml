@@ -1,0 +1,41 @@
+<view class='baise' wx:if="{{all_info_data==''}}"></view>
+<import src="../fuyong/fuyong.wxml" />
+<view class='ding_ul'>
+  <image src='../img/home/wu_jilu.png' class='wu_xianlu' wx:if="{{all_info_data == '' }}"></image>
+  <view class='ding_li' wx:for='{{all_info_data}}'  wx:key="{{index}}" wx:for-item="item" bindtap='mian_xiang' data-type="{{item.tz_record?1:2}}" data-route_id="{{item.route_id}}" data-zj_id="{{item.zj_id}}" data-isdel="{{item.is_del}}" data-id="{{item.id}}">
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{item.images_thumb}}' class='img_left'></image>
+        <view class='ding_chu'>{{item.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{item.route_name}}</view>
+        <view class='ding_time'>线路ID{{item.route_id}}</view> 
+        <view class='chengren'><text decode="true">价&emsp;&emsp;值：</text><text>￥{{item.price}}</text></view>
+        <view class='chuxing'>出行时间：<text>{{item.departure_time}}</text></view>
+      </view>
+    </view>
+    <view wx:if='{{item.tz_record.length>0}}'>
+      <view class='xian'></view>
+      <view class='ding_bott' wx:for="{{item.tz_record}}" wx:for-item="items" wx:key="items">
+        <view class='bott_left'>{{items.time}}</view>
+        <view class='bott_right'>已投<text>{{items.score}}</text>积分</view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class='xian'></view>
+      <view class='ding_bott'>
+        <view class='bott_left'>已开奖</view>
+        <view class='bott_right'>已投<text>{{item.yi_score}}</text>积分</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>
+

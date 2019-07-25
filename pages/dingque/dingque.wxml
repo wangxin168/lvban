@@ -1,0 +1,85 @@
+<!--pages/dingque/dingque.wxml-->
+<!-- <text>pages/dingque/dingque.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<!-- 白色的底 -->
+<view class='white_di'>
+  <!-- 红色 -->
+  <view class='hongse'></view>
+  <!-- 顶部信息 -->
+  <view class='ding_top'>
+    <view class='ing_left'>
+      <image src='{{xianlucon.img_one}}' class='img_left'></image>
+      <view class='ding_chu'>{{xianlucon.departure_place}}出发</view>
+    </view>
+    <view class='ding_right'>
+      <view class='ding_tit'>{{xianlucon.route_name}}</view>
+      <view class='ding_time'>线路ID{{xianlucon.route_id}}</view>
+      <view class='chengren'>成人
+          <text class='mary' decode="{{true}}" style='width:{{jia_kuan}}rpx'>{{xianlucon.adult_price}}元</text>/出行后可获得
+          <text class='jifen' decode="{{true}}" style='width:{{kuan}}rpx'>{{xianlucon.adult_integral}}</text>积分</view>
+        <view class='chengren' wx:if="{{xianlucon.children_price!=0}}">儿童
+          <text class='mary' decode="{{true}}" style='width:{{jia_kuan}}rpx'>{{xianlucon.children_price}}元</text>/出行后可获得
+          <text class='jifen' decode="{{true}}" style='width:{{kuan}}rpx'>{{xianlucon.children_integral}}</text>积分</view>
+    </view>
+  </view>
+  <view class='renshu' style='margin-top: 29rpx;'>
+    <view class='check_ren'>出行人数</view>
+    <view class='check_num'>
+      <text>成人</text>
+      <view class='jiajian'>
+        {{adult_num}}人
+      </view>
+    </view>
+  </view>
+  <view class='renshu' style='border-top: 2rpx solid #d8d8d8;' wx:if="{{xianlucon.children_price!=0}}">
+    <view class='check_num' style='margin-top:48rpx;'>
+      <view class='ertong'>
+        <view>儿童</view>
+        <view>儿童年龄不得超过12岁(不含),超龄将影响出行</view>
+      </view>
+      <view class='jiajian'>
+        {{child_num}}人
+      </view>
+    </view>
+  </view>
+  <view class='bott_buy'>
+    <view>总价：
+      <text>￥{{mary}}</text>
+    </view>
+    <view bindtap='zhifu'>立即支付</view>
+  </view>
+</view>
+<view class='renshu' style='height:116rpx;'>
+  <view class='check_num' style='margin-top:36rpx;'>
+    <view class='riqi'>
+      出行日期
+    </view>
+    <view class='xuan_riqi'>
+      {{departure_time}}
+    </view>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<view class='succ' wx:if="{{succ}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei'>
+      <image src='../img/home/succ.png' class='succ_img'></image>
+      <view style='margin-top:14rpx;font-size: 34rpx;color: #404040;'>支付成功</view>
+      <view>您已成功预定行程，出行后可获得</view>
+      <view>{{song_jf}}积分，相应出团通知，我们将在</view>
+      <view>三个工作日内与您取得联系，确认</view>
+      <view>后续出行事宜</view>
+      <view class='anniu'>
+        <view bindtap='shouye'>返回首页</view>
+        <view bindtap='dingdan'>查看订单</view>
+      </view>
+    </view>
+    <!-- <image src='../img/home/close.png' bindtap='close' class='close'></image> -->
+  </view>
+</view>

@@ -1,0 +1,201 @@
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<import src="../fuyong/fuyong.wxml" />
+<import src="../../towxml/entry.wxml"/>
+
+<view style='position: {{position}}'>
+  <view class='banner_box'>
+  <view class='banner'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+      <block wx:for="{{img_thumb}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='banner_text'>{{route_info.departure_place}}出发</view>
+</view>
+
+<view class='xianlu' style='margin-top:22rpx;'>
+  <text class='xianlu_tit'>{{route_info.route_name}}</text>
+  <button open-type='share'>
+    <image src='../img/home/fenxiang.png'></image>
+  </button>
+</view>
+<view class='xianlu' style='margin-top:6rpx;'>
+  <text class='xianlu_id'>线路ID{{route_id}}</text>
+  <!-- <text class='xianlu_and'>旅伴一起来出游</text> -->
+  <button open-type='share'>旅伴一起来出游</button>
+</view>
+<!-- <view class='xianlu' style='margin-top:9rpx;'>
+  <text class='xianlu_go'>{{route_info.departure_place}}出发</text>
+</view> -->
+<view class='yungaold' style='margin-top:16rpx;'>
+  <view>
+    <text class='old'>价值</text>
+    <text class='much' style='font-size: 38rpx;color: #D34C4C;'>{{route_info.price}}元</text>
+  </view>
+</view>
+<view class='yungaold' style='border-bottom: 1px solid #ECECEC;padding:0 12rpx 20rpx 0;'>
+  <view>
+    <text class='old'>出发时间:</text>
+    <text class='much'>{{route_info.departure_time}}</text>
+  </view>
+
+</view>
+<!-- 未出行  已出行 -->
+<!-- 进度条 -->
+<view class='bott_left'>
+  <view class='jindu' style='width:{{route_info.process_num}}%'></view>
+  <view class='baifenbi'>进度:{{route_info.process_num}}%</view>
+</view>
+
+<view class='xian'></view>
+<!-- 推荐路线 -->
+<view class='route_line'>
+  <text class='route_line_pre'>详情</text>
+  <image src='../img/home/fangda.png'></image>
+</view>
+<!-- 文案 -->
+<view class='xianlu_con'>
+  <!-- <template is="wxParse" data="{{wxParseData:contents.nodes}}" /> -->
+  <template is="entry" data="{{...article}}"/>
+</view>
+<view style='height:10rpx;'></view>
+<view class='foot' bindtap='choujiang'>
+  去抽奖
+</view>
+<!-- 授权手机号弹框 -->
+<view class='phone' wx:if="{{shouquan}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei'>
+      <image src='../img/home/1.png' class='beijing'></image>
+      <view style='margin-top:293rpx;'>为保证您的旅游安全</view>
+      <view>出行人需提供手机号码用于旅游</view>
+      <view>保险投保，是否授权？</view>
+      <button class='shouquan' open-type="getPhoneNumber" bindgetphonenumber="shouquan">授权</button>
+    </view>
+    <image src='../img/home/close.png' bindtap='close'></image>
+  </view>
+</view>
+<!-- 积分不足 -->
+<view class='phone' wx:if="{{jifen_n}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei' style='background:#ffffff;'>
+      <image src='../img/home/jifen.png' class='jifen'></image>
+      <view style='margin-top:44rpx;'>您现拥有的积分，小于该</view>
+      <view>免费线路抽奖的最小参与积分。</view>
+      <view>请邀请旅伴获取更多积分后再来参与。</view>
+      <button class='shouquan' bindtap='huo_jifen'>获取积分</button>
+    </view>
+    <image src='../img/home/close.png' bindtap='close'></image>
+  </view>
+</view>
+<!-- 超了 -->
+<view class='phone' wx:if="{{chaole}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei' style='background:#ffffff;'>
+      <image src='../img/home/jifen.png' class='jifen'></image>
+      <view style='margin-top:74rpx;'>本产品剩余投注额仅为{{zuisheng}}积分</view>
+      <view>是否确认投满抽奖？</view>
+      <button class='shouquan' bindtap='que_chou'>确认抽奖</button>
+    </view>
+    <image src='../img/home/close.png' bindtap='close'></image>
+  </view>
+</view>
+<!-- 奖池已满 -->
+<view class='phone' wx:if="{{yiman}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei' style='background:#ffffff;'>
+      <image src='../img/home/jifen.png' class='jifen'></image>
+      <view style='margin-top:74rpx;'>这个奖品已经没有了</view>
+      <view>请选择其他商品</view>
+      <button class='shouquan' bindtap='mianfei'>确认</button>
+    </view>
+    <!-- <image src='../img/home/close.png' bindtap='mianfei'></image> -->
+  </view>
+</view>
+<!-- 抽奖 -->
+<view class='phone' wx:if="{{chou_succ}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei' style='background:#ffffff;'>
+      <image src='../img/home/succ.png' class='succ_img'></image>
+      <view style='margin-top:24rpx;font-size: 34rpx;color: #404040;'>抽奖成功</view>
+      <view>您已成功抽奖，开奖后，会以公众</view>
+      <view>号消息的方式告知您开奖结果。您</view>
+      <view>也可在抽奖记录中查看中奖详情。</view>
+      <!-- 跳转抽奖记录 -->
+      <!-- <button class='shouquan' bindtap='queren'>确认</button> -->
+      <view class='anniu'>
+        <view bindtap='xianlu'>更多抽奖线路</view>
+        <view bindtap='queren'>抽奖记录</view>
+      </view>
+    </view>
+    <!-- <image src='../img/home/close.png' bindtap='close'></image> -->
+  </view>
+</view>
+
+<view class='xuanze' wx:if="{{display}}" bindtap='yincang'>
+  <!-- 白色的底 -->
+  <view class='white_di' catchtap='meiyong'>
+    <!-- 顶部信息 -->
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{route_info.img_thumb[0]}}' class='img_left'></image>
+        <view class='ding_chu'>{{route_info.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{route_info.route_name}}</view>
+        <view class='ding_time'>线路ID{{route_info.route_id}}</view>
+        <view class='chengren'>
+          价值
+          <text class='mary'>{{route_info.price}}元</text>
+        </view>
+      </view>
+    </view>
+    <view class='renshu' style='height:219rpx;margin-top:20rpx;'>
+      <!-- 进度条 -->
+      <view class='bott_left' style='margin:33rpx 0 0 0;'>
+        <view class='jindu' style='width:{{route_info.process_num}}%'></view>
+        <view class='baifenbi'>进度:{{route_info.process_num}}%</view>
+      </view>
+      <view class='xuan_riqi'>
+        我的积分：{{user_score}}
+      </view>
+      <view class='xuan_shabi'>
+        <!-- 本次最少{{zuixiao}}积分，最多{{total_amount}}积分 -->
+        本次最少{{zuixiao}}积分，最多{{zuiduo}}积分
+      </view>
+    </view>
+    <view class='renshu'>
+      <view class='check_num' style='margin-top:48rpx;'>
+        <view class='ertong'>
+          <view>设置抽奖积分</view>
+        </view>
+        <view class='jiajian'>
+          <image src='../img/home/jian.png' style='margin-right:30rpx;' catchtap='erjian'></image>
+          <text wx:if="{{chou_ji!=0}}">{{tz_amount}}</text>
+          <text wx:if="{{chou_ji==0}}">0</text>
+          <image src='../img/home/jia.png' style='margin-left:30rpx;' catchtap='erjia'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bott_buy'>
+    <view catchtap='submit'>抽奖</view>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>
+<view class='zhezhao' wx:if="{{zhezhao}}"></view>
+</view>

@@ -1,0 +1,250 @@
+@import "../fuyong/fuyong.wxss";
+@import '../../towxml/style/main.wxss';
+.wxParse-p {
+  width: 100%;
+}
+.wxParse-img {
+  width: 100% !important;
+  /* height: 360rpx !important; */
+  margin-bottom: 192rpx;
+  margin-top: 19rpx;
+}
+.banner{
+  width: 100%;
+  height: 376rpx;
+  margin-top: 30rpx;
+}
+swiper{
+  width: 100%;
+  height: 100%;
+}
+swiper-item{
+  width: 100%;
+  height: 100%;
+}
+swiper-item image{
+  width: 717rpx;
+  height: 100%;
+  display: block;
+  margin: auto;
+  border-radius: 10rpx;
+}
+.xianlu{
+  padding: 0 16rpx 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.xianlu .xianlu_tit {
+  font-size: 36rpx;
+color: #404040;
+}
+.xianlu image{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 68rpx;
+}
+.xianlu_id{
+  font-size: 30rpx;
+  color: #898989;
+}
+.xianlu button{
+  font-size: 26rpx;
+  color: #B8B8B8;
+  border:none !important;
+  border-radius:0;
+  line-height: normal;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+button::after{
+  border: none;
+}
+.xianlu_and{
+  font-size: 26rpx;
+  color: #B8B8B8;
+}
+.xianlu_go{
+  font-size: 30rpx;
+color: #9C9C9C;
+}
+.yungaold{
+  width: 730rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2rpx solid #ECECEC;
+  padding: 0 12rpx 0 0;
+  box-sizing: border-box;
+}
+.yungaold .old{
+  font-size: 30rpx;
+color: #898989;
+}
+.yungaold .much{
+  font-size: 38rpx;
+color: #D34C4C;
+margin-left: 25rpx;
+}
+.yungaold .jifen{
+  font-size: 30rpx;
+color: #9C9C9C;
+}
+.yungaold .jifen text{
+  color: #D34C4C;
+}
+.dingbian{
+  font-size: 30rpx;
+    color: #737373;
+    margin-top: 27rpx;
+    margin-left: 20rpx;
+    width:730rpx;
+
+}
+.chuxing{
+  margin-top: 18rpx;
+  margin-left: 22rpx;
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #939393;
+  margin-bottom: 29rpx;
+}
+.chuxing .chu_wei{
+  width: 116rpx;
+  height: 42rpx;
+  background: #EA4B34;
+  border-radius: 21px;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 42rpx;
+  margin-right: 11rpx;
+
+}
+.chuxing .chu_wei_new{
+  width: 116rpx;
+  height: 42rpx;
+  background: #28AB48;
+  border-radius: 21px;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 42rpx;
+  margin-right: 11rpx;
+
+}
+.xian{
+  width: 100%;
+  height: 22rpx;
+  background: #F2F2F2;
+}
+/* 推荐路线 */
+.route_line {
+  padding: 0 0 0 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 90rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.route_line image{
+  width: 262rpx;
+  height: 54rpx;
+  display: block;
+}
+.route_line_pre{
+  padding-left:20rpx;
+  position: relative;
+  font-size: 38rpx;
+  color: #404040;
+}
+.route_line_pre ::before{
+  content: '';
+  display: block;
+  width:8rpx;
+  height:43rpx;
+  background: #EB5139;
+  position: absolute;
+  left:0;
+  top:50%;
+  transform: translateY(-50%)
+}
+.xianlu_con{
+  width: 100%;
+  /* margin: 12rpx auto 0; */
+  margin-bottom: 120rpx;
+  font-size: 30rpx;
+color: #7A7A7A;
+line-height: 47rpx;
+}
+.xianlu_img{
+  width: 698rpx;
+  margin: 19rpx auto 192rpx;
+  height: 360rpx;
+}
+.xianlu_img image{
+  width: 100%;
+  height: 100%;
+}
+.foot{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #EA4B34;
+  text-align: center;
+  align-items: center;
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+.foot image{
+  width: 56rpx;
+  height: 56rpx;
+  /* display: block;
+  margin-left: 269rpx; */
+  margin-right: 7rpx;
+  margin-bottom: -16rpx;
+}
+.banner_box{
+  position: relative;
+}
+.banner_text{
+  /* width:160rpx; */
+  padding:0 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  background: rgba(0,0,0,0.67);
+  position: absolute;
+  left:17rpx;
+  top:280rpx;
+  border-radius: 0 30rpx 30rpx 0;
+}
+.foot button{
+  height: 110rpx;
+  line-height: 110rpx;
+  border-radius: none;
+  border:none;
+  width:100%;
+  background: #EA4B34;
+  text-align: center;
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+.xuanfu{
+  position: fixed;
+  bottom: 300rpx;
+  right: 50rpx;
+  width: 128rpx;
+  height: 128rpx;
+}

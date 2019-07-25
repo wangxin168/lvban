@@ -1,0 +1,33 @@
+<!--pages/liushui/liushui.wxml-->
+<!-- <text>pages/liushui/liushui.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<view class='baise' wx:if="{{all_info_data==''}}"></view>
+<view class='liushui_ul'>
+  <view class='liushui_li' wx:for="{{all_info_data}}" wx:key="{{index}}">
+    <view class='liu_top'>
+      <text wx:if='{{item.type == 6||item.type == 3}}'>{{item.route_name}}</text>
+      <text wx:if='{{item.type != 6&&item.type != 3}}'>{{item.username}}</text>
+      <text wx:if='{{item.type == 1}}'>邀请旅伴注册</text>
+      <text wx:if='{{item.type == 2}}'>新用户奖励</text>
+      <text wx:if='{{item.type == 3}}'>本人购买</text>
+      <text wx:if='{{item.type == 4}}'>旅伴购买</text>
+      <text wx:if='{{item.type == 5}}'>旅伴的旅伴购买</text>
+      <text wx:if='{{item.type == 6}}'>抽奖</text>
+      <text wx:if='{{item.type == 7}}'>系统扣除</text>
+      <text wx:if='{{item.type == 8}}'>系统奖励</text>
+    </view>
+    <view class='liu_bott'>
+      <text>{{item.create_time}}</text>
+      <text wx:if="{{item.type == 6||item.type == 7}}">-{{item.score}}</text>
+      <text wx:else>+{{item.score}}</text>
+    </view>
+  </view>
+  <image src='../img/home/wu_jifen.png' class='wu_xianlu' wx:if="{{all_info_data == '' }}"></image>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

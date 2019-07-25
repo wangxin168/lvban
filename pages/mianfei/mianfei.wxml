@@ -1,0 +1,105 @@
+<import src="../fuyong/fuyong.wxml" />
+<image src='../img/home/mianfei_di.png' class='mianfei_di'></image>
+<view class='jifen_mian'>
+  <view class='mian_jifen'>我的积分：{{user_score}}</view>
+  <view class='mian_rule' bindtap='rule'>查看详细规则</view>
+</view>
+<view class='gundong'>
+  <image src='../img/home/laba.png' class='laba'></image>
+
+  <swiper class='gun_con' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="{{vertical}}" circular="true">
+    <block>
+      <swiper-item wx:for="{{lunbo}}" wx:key="{{index}}">
+        <view class="swiper_item">{{item.nickname}}抽奖获得价值{{item.price}}元的{{item.route_name}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='ding_ul'>
+  <view class='ding_li' bindtap='mian_xiang' data-route_id="{{chouj1.route_id}}" wx:if="{{chouj1!=''}}" data-id="{{chouj1.id}}" data-total_amount="{{chouj1.total_amount}}">
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{chouj1.img_thumb}}' class='img_left'></image>
+        <view class='ding_chu'>{{chouj1.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{chouj1.route_name}}</view>
+        <view class='ding_time'>线路ID{{chouj1.route_id}}</view>
+        <view class='chengren'>
+          <text decode="true">价&emsp;&emsp;值：</text>
+          <text>￥{{chouj1.price}}</text>
+        </view>
+        <view class='chuxing'>出行时间：
+          <text>{{chouj1.departure_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='ding_bott'>
+      <!-- 进度条 -->
+      <view class='bott_left'>
+        <view class='jindu' style='width:{{chouj1.process_num}}%'></view>
+        <view class='baifenbi'>进度:{{chouj1.process_num}}%</view>
+      </view>
+      <view class='bott_right'>抽奖</view>
+    </view>
+  </view>
+  <view class='ding_li' bindtap='mian_xiang' data-route_id="{{chouj2.route_id}}" wx:if="{{chouj2!=''}}" data-id="{{chouj2.id}}" data-total_amount="{{chouj1.total_amount}}">
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{chouj2.img_thumb}}' class='img_left'></image>
+        <view class='ding_chu'>{{chouj2.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{chouj2.route_name}}</view>
+        <view class='ding_time'>线路ID{{chouj2.route_id}}</view>
+        <view class='chengren'>
+          <text decode="true">价&emsp;&emsp;值：</text>
+          <text>￥{{chouj2.price}}</text>
+        </view>
+        <view class='chuxing'>出行时间：
+          <text>{{chouj2.departure_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='ding_bott'>
+      <!-- 进度条 -->
+      <view class='bott_left'>
+        <view class='jindu' style='width:{{chouj2.process_num}}%'></view>
+        <view class='baifenbi'>进度:{{chouj2.process_num}}%</view>
+      </view>
+      <view class='bott_right'>抽奖</view>
+    </view>
+  </view>
+  <!-- 中奖 -->
+  <view class='ding_li' wx:for="{{zj_lst}}" wx:key="index" bindtap='kai_xiang' data-zj_id="{{item.id}}" data-isdel="{{item.is_del}}">
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{item.img_thumb}}' class='img_left'></image>
+        <view class='ding_chu'>{{item.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{item.route_name}}</view>
+        <view class='ding_time'>线路ID{{item.route_id}}</view> 
+        <view class='chengren'><text decode="true">价&emsp;&emsp;值：</text><text>￥{{item.price}}</text></view>
+        <view class='chuxing'>出行时间：<text>{{item.departure_time}}</text></view>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='ding_bott'>
+      <view class='bott_l'>已开奖</view>
+      <view class='bott_r' style='display:flex;align-items: center;font-size: 32rpx;color: #515151;'>
+        中奖者：
+        <image src='{{item.avatar}}' class='tu_img'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>

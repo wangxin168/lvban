@@ -1,0 +1,63 @@
+{
+  "pages":[
+    
+    "pages/home/home",
+    "pages/rili/rili",
+    "pages/mianfei/mianfei", 
+    "pages/wode/wode",        
+    "pages/dingdan/dingdan",
+    "pages/logs/logs",
+    "pages/kefu/kefu",
+    "pages/jilu/jilu",
+    "pages/lvyou/lvyou",
+    "pages/luxian/luxian",
+    "pages/dingxiang/dingxiang",
+    "pages/liushui/liushui",
+    "pages/lvban/lvban",
+    "pages/holvban/holvban",
+    "pages/dingque/dingque",
+    "pages/mian_xiang/mian_xiang",
+    "pages/kai_xiang/kai_xiang",
+    "pages/erwei_code/erwei_code",
+    "pages/fuyong/fuyong",
+    "pages/prize/prize",
+    "pages/rule/rule"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#EA4B34",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#B9B9B9",
+    "selectedColor": "#EB5139",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/img/bott/shouye_n.png",
+        "selectedIconPath": "pages/img/bott/shouye_y.png"
+      },
+      {
+        "pagePath": "pages/mianfei/mianfei",
+        "text": "免费旅游",
+        "iconPath": "pages/img/bott/mianfei_n.png",
+        "selectedIconPath": "pages/img/bott/mianfei_y.png"
+      },
+      {
+        "pagePath": "pages/dingdan/dingdan",
+        "text": "订单",
+        "iconPath": "pages/img/bott/dingdan_n.png",
+        "selectedIconPath": "pages/img/bott/dingdan_y.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "个人中心",
+        "iconPath": "pages/img/bott/wode_n.png",
+        "selectedIconPath": "pages/img/bott/wode_y.png"
+      }
+    ]
+  }
+}

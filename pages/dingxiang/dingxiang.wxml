@@ -1,0 +1,108 @@
+<import src="../fuyong/fuyong.wxml" />
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<import src="../../towxml/entry.wxml"/>
+<view wx:if="{{no_data == 0 }}">
+  <view class='banner_box'>
+    <view class='banner'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='banner_text'>{{all_data.departure_place}}出发</view>
+  </view>
+  <view class='xianlu' style='margin-top:22rpx;'>
+    <text class='xianlu_tit'>{{all_data.route_name}}</text>
+    <button open-type='share'>
+      <image src='../img/home/fenxiang.png'></image>
+    </button> 
+  </view>
+  <view class='xianlu' style='margin-top:6rpx;'>
+    <text class='xianlu_id'>线路ID{{all_data.route_id}}</text>
+    <button open-type='share'>旅伴一起来出游</button>
+    <!-- <text class='xianlu_and'></text> -->
+  </view>
+  <!-- <view class='xianlu' style='margin-top:9rpx;'>
+  <text class='xianlu_go'>{{all_data.departure_place}}</text>
+</view> -->
+  <view wx:if='{{type==2}}'>
+    <view class='yungaold' style='margin-top:16rpx;border-bottom:2rpx solid #ECECEC;'>
+      <view>
+        <text class='old'>价值</text>
+        <text class='much'>{{all_data.price}}元</text>
+      </view>
+      <view class='jifen'>
+        免费抽奖获得
+      </view>
+    </view>
+  </view>
+  <view wx:if='{{type==1}}'>
+    <view class='yungaold' style='margin-top:16rpx;'>
+      <view>
+        <text class='old'>成人</text>
+        <text class='much'>{{all_data.adult_price}}元</text>
+      </view>
+      <view class='jifen'>
+        出行后可获得
+        <text decode="{{true}}">{{all_data.adult_integral}}&nbsp;</text>积分
+      </view>
+    </view>
+    <view class='yungaold' style='border-bottom:2rpx solid #ECECEC;'>
+      <view>
+        <text class='old'>儿童</text>
+        <text class='much'>{{all_data.children_price}}元</text>
+      </view>
+      <view class='jifen'>
+        出行后可获得
+        <text decode="{{true}}">{{all_data.children_integral}}&nbsp;</text>积分
+      </view>
+    </view>
+  </view>
+  <!-- 未出行  已出行 -->
+  <view class='dingbian'>
+    <text>订单编号：</text>
+    <text>{{all_data.order_sn}}</text>
+  </view>
+  <view class='chuxing' wx:if='{{all_data.status == 0}}'>
+    <view class='chu_wei'>未出行</view>
+    <view wx:if='{{type==1}}'>(出行后可获得{{all_data.integral}}积分）</view>
+    <view wx:if='{{type==2}}'>（免费抽奖获得）</view>
+  </view>
+  <view class='chuxing' wx:if='{{all_data.status == 1}}'>
+    <view class='chu_wei_new'>已出行</view>
+    <view wx:if='{{type==1}}'>(已获得{{all_data.integral}}积分）</view>
+    <view wx:if='{{type==2}}'>（免费抽奖获得）</view>
+    
+  </view>
+  <view class='xian'></view>
+  <!-- 推荐路线 -->
+  <view class='route_line'>
+    <text class='route_line_pre'>详情</text>
+    <image src='../img/home/fangda.png'></image>
+  </view>
+  <!-- 文案 -->
+  <view class='xianlu_con'>
+    <!-- <template is="wxParse" data="{{wxParseData:contents.nodes}}" /> -->
+    <template is="entry" data="{{...article}}"/>
+  </view>
+  <view style='height:10rpx;'></view>
+</view>
+<view class='hint_message' wx:if="{{no_data == 1 }}">暂无资源</view>
+<view class='foot'>
+  <button open-type="contact" bindcontact="handleContact" class='foot_krfu'>
+    <view class='foot_left'>
+      <image src='../img/home/kefub.png'></image>
+      <text>联系客服</text>
+    </view>
+  </button>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

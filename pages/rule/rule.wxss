@@ -1,0 +1,15 @@
+/* pages/rule/rule.wxss */
+@import '../../towxml/style/main.wxss';
+.wxParse-p{
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+color: #7A7A7A;
+}
+.wxParse-p:nth-of-type(1){
+  font-size: 36rpx;
+}
+.xianlu_con{
+  width: 92%;
+  margin: auto;
+}

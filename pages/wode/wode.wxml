@@ -1,0 +1,49 @@
+<!--pages/wode/wode.wxml-->
+<!-- <text>pages/wode/wode.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<view style='position:{{position}}'>
+  <view class='touxiang'>
+    <image src='../img/home/me.png' class='beij'></image>
+    <view class='tou_img'>
+      <image src='{{my_info.avatar}}'></image>
+    </view>
+    <view class='nicheng'>{{my_info.nickname}}</view>
+    <view class='jifen'>积分：
+      <text>{{my_info.score}}</text>
+    </view>
+  </view>
+  <view class='new_ul'>
+    <view class='new_li' bindtap='dingdan'>
+      <image src='../img/home/dingd.png'></image>
+      <view class='dingd'>订单</view>
+    </view>
+    <view class='new_li' style='width:248rpx;margin-left:1rpx;margin-right:2rpx;' bindtap='lvban'>
+      <image src='../img/home/banlv.png'></image>
+      <view class='dingd'>我的旅伴</view>
+    </view>
+    <view class='new_li' bindtap='jilu' style='width:248rpx;'>
+      <image src='../img/home/jilu.png'></image>
+      <view class='dingd'>抽奖记录</view>
+    </view>
+    <view class='new_li' style='margin-top:2rpx;' bindtap='liushui'>
+      <image src='../img/home/liushui.png'></image>
+      <view class='dingd'>积分流水</view>
+    </view>
+    <view class='new_li' style='margin-top:2rpx;margin-left:1rpx;width:248rpx;margin-right:2rpx;' bindtap='erwei_code'>
+      <image src='../img/home/erweima.png'></image>
+      <view class='dingd'>我的二维码</view>
+    </view>
+    <view class='new_li' style='width:248rpx;margin-top:2rpx;'>
+      <button open-type="contact">
+        <image src='../img/home/wo_kefu.png'></image>
+        <view class='dingd'>客服</view>
+      </button>
+    </view>
+  </view>
+  <view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+</view>

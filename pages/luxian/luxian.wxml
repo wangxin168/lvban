@@ -1,0 +1,166 @@
+<!-- pages/luxian/luxian.wxml -->
+<!-- <text>pages/luxian/luxian.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<!-- <import src="../../wxParse/wxParse.wxml" /> -->
+<import src="../../towxml/entry.wxml"/>
+
+
+<view style='position: {{position}}'>
+  <view class='banner'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+    <block wx:for="{{xianlucon.img_thumb}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='xianlu' style='margin-top:22rpx;'>
+  <text class='xianlu_tit'>{{xianlucon.route_name}}</text>
+  <button open-type='share'>
+      <image src='../img/home/fenxiang.png'></image>
+    </button> 
+</view>
+<view class='xianlu' style='margin-top:6rpx;'>
+  <text class='xianlu_id'>线路ID{{xianlucon.route_id}}</text>
+  <!-- <text class='xianlu_and'>旅伴一起来出游</text> -->
+  <button open-type='share'>旅伴一起来出游</button>
+</view>
+<view class='xianlu' style='margin-top:9rpx;'>
+  <text class='xianlu_go'>{{xianlucon.departure_place}}出发</text>
+</view>
+<view class='yungaold' style='margin-top:16rpx;'>
+  <view>
+    <text class='old'>成人</text>
+    <text class='much'>{{xianlucon.adult_price}}元</text>
+  </view>
+  <view class='jifen'>出行后可获得
+    <text style='width:{{kuan}}rpx'>{{xianlucon.adult_integral}}</text>积分
+  </view>
+</view>
+<view class='yungaold' wx:if="{{xianlucon.children_price!=0}}">
+  <view>
+    <text class='old'>儿童</text>
+    <text class='much'>{{xianlucon.children_price}}元</text>
+  </view>
+  <view class='jifen'>出行后可获得
+    <text style='width:{{kuan}}rpx'>{{xianlucon.children_integral}}</text>积分</view>
+</view>
+<view class='xian'></view>
+<!-- 推荐路线 -->
+<view class='route_line'>
+  <text class='route_line_pre'>详情</text>
+  <image src='../img/home/fangda.png'></image>
+</view>
+<!-- 文案 -->
+<view class='xianlu_con'>
+  <!-- <template is="wxParse" data="{{wxParseData:contents.nodes}}" /> -->
+  <template is="entry" data="{{...article}}"/>
+  <!-- {{details}} -->
+</view>
+<view style='height:10rpx;'></view>
+<view class='foot'>
+  <button open-type="contact" bindcontact="handleContact" class='foot_krfu'>
+    <view class='foot_left'>
+      <image src='../img/home/kefu.png'></image>
+      <view>客服</view>
+    </view>
+  </button>
+  <!-- <button class='foot_right' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    立即购买
+  </button> -->
+  <button class='foot_right' bindtap='pnone_yn'>
+    立即购买
+  </button>
+</view>
+<!-- 授权手机号弹框 -->
+<view class='phone' wx:if="{{shouquan}}">
+  <!-- 框和× -->
+  <view class='plone_box'>
+    <view class='phone_bei'>
+      <image src='../img/home/1.png' class='beijing'></image>
+      <view style='margin-top:293rpx;'>为保证您的旅游安全</view>
+      <view>出行人需提供手机号码用于旅游</view>
+      <view>保险投保，是否授权？</view>
+      <button class='shouquan' open-type="getPhoneNumber" bindgetphonenumber="shouquan">授权</button>
+    </view>
+    <image src='../img/home/close.png' bindtap='close'></image>
+  </view>
+</view>
+<view class='xuanze' wx:if="{{display}}" bindtap='yincang'>
+  <!-- 白色的底 -->
+  <view class='white_di' catchtap='meiyong'>
+    <!-- 顶部信息 -->
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{xianlucon.img_one}}' class='img_left'></image>
+        <view class='ding_chu'>{{xianlucon.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{xianlucon.route_name}}</view>
+        <view class='ding_time'>线路ID{{xianlucon.route_id}}</view>
+        <view class='chengren'>成人
+          <text class='mary' decode="{{true}}" style='width:{{jia_kuan}}rpx'>{{xianlucon.adult_price}}元</text>/出行后可获得
+          <text class='jifen' decode="{{true}}" style='width:{{kuan}}rpx'>{{xianlucon.adult_integral}}</text>积分</view>
+        <view class='chengren' wx:if="{{xianlucon.children_price!=0}}">儿童
+          <text class='mary' decode="{{true}}" style='width:{{jia_kuan}}rpx'>{{xianlucon.children_price}}元</text>/出行后可获得
+          <text class='jifen' decode="{{true}}" style='width:{{kuan}}rpx'>{{xianlucon.children_integral}}</text>积分</view>
+      </view>
+    </view>
+    <view class='renshu' style='margin-top: 29rpx;'>
+      <view class='check_ren'>请选择出行人数</view>
+      <view class='check_num'>
+        <text>成人</text>
+        <view class='jiajian'>
+          <image src='../img/home/jian.png' style='margin-right:30rpx;' catchtap='chengjian'></image>
+          {{chengren}}
+          <image src='../img/home/jia.png' style='margin-left:30rpx;' catchtap='chengjia'></image>
+        </view>
+      </view>
+    </view>
+    <view class='renshu' wx:if="{{xianlucon.children_price!=0}}">
+      <view class='check_num' style='margin-top:48rpx;'>
+        <view class='ertong'>
+          <view>儿童</view>
+          <view>儿童年龄不得超过12岁(不含),超龄将影响出行</view>
+        </view>
+        <view class='jiajian'>
+          <image src='../img/home/jian.png' style='margin-right:30rpx;' catchtap='erjian'></image>
+          {{ertong}}
+          <image src='../img/home/jia.png' style='margin-left:30rpx;' catchtap='erjia'></image>
+        </view>
+      </view>
+    </view>
+    <view class='renshu' style='height:142rpx;'>
+      <view class='check_num' style='margin-top:48rpx;'>
+        <view class='riqi'>
+          出行日期
+        </view>
+        <view class='xuan_riqi' catchtap="check_date" wx:if="{{message==''}}">
+          请选择
+          <image src='../img/home/xiala.png'></image>
+        </view>
+        <view class='xuan_riqi' catchtap="check_date" wx:if="{{message!=''}}">
+          {{message}}
+        </view>
+      </view>
+    </view>
+    <view class='xian'></view>
+  </view>
+  <view class='bott_buy'>
+    <view>总价：
+      <text>￥{{xianlucon.adult_price*chengren+xianlucon.children_price*ertong}}</text>
+    </view>
+    <view catchtap='submit'>提交订单</view>
+  </view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>
+<!-- <image class='xuanfu' src='../img/home/fanhui.png' bindtap='fanhui'></image> -->
+
+</view>

@@ -1,0 +1,201 @@
+/* pages/home/home.wxss */
+
+@import "../fuyong/fuyong.wxss";
+.my_swiper_box {
+  width: 100%;
+  height: 378rpx;
+}
+
+.my_swiper_img {
+  width: 100%;
+  height: 378rpx;
+}
+
+.list_box {
+  display: flex;
+  padding: 20rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.list_item {
+  width: 223rpx;
+  height: 285rpx;
+  position: relative;
+}
+
+.list_item image {
+  width: 223rpx;
+  height: 285rpx;
+}
+
+.list_text {
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 156rpx;
+  opacity: 0.63;
+  background: #ea4b34;
+  border-radius: 5px;
+  width: 183rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.list_item2 {
+  width: 340rpx;
+  height: 200rpx;
+  position: relative;
+}
+
+.list_item2 image {
+  width: 340rpx;
+  height: 200rpx;
+}
+
+.list_text2 {
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 106rpx;
+  opacity: 0.63;
+  background: #ea4b34;
+  border-radius: 5px;
+  width: 183rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+/* 推荐路线 */
+
+.route_line {
+  padding: 0 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 90rpx;
+  margin-top: 10rpx;
+}
+
+.route_line_pre {
+  padding-left: 20rpx;
+  position: relative;
+  font-size: 38rpx;
+  color: #404040;
+}
+
+.route_line_pre ::before {
+  content: '';
+  display: block;
+  width: 8rpx;
+  height: 43rpx;
+  background: #eb5139;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.route_bg {
+  width: 270rpx;
+  height: 90rpx;
+}
+
+.tui_ul {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.tui_ul .tui_li {
+  width: 49%;
+  height: 609rpx;
+  border-radius: 6rpx;
+  position: relative;
+  margin-bottom: 17rpx;
+  box-shadow: 0 6rpx 5rpx 0 rgba(225, 225, 225, 0.50);
+}
+
+.tui_ul .tui_li .tui_img {
+  width: 100%;
+  height: 374rpx;
+}
+
+.tui_ul .tui_li .tui_tit {
+  font-size: 32rpx;
+  color: #565656;
+  margin-left: 13rpx;
+}
+
+.tui_ul .tui_li .tui_lu {
+  font-size: 28rpx;
+  color: #898989;
+  margin-left: 13rpx;
+  margin-top: 5rpx;
+}
+
+.tui_ul .tui_li .tui_jian {
+  width: 236rpx;
+  height: 40rpx;
+  background-image: linear-gradient(-90deg, #fe6165 0%, #faa76c 100%);
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  color: #fff;
+  margin-left: 13rpx;
+  margin-top: 3rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.tui_ul .tui_li .tui_price {
+  font-size: 23rpx;
+  color: #d34c4c;
+  display: flex;
+  align-items: center;
+  margin-left: 13rpx;
+  margin-top: 8rpx;
+}
+
+.tui_ul .tui_li .tui_price .price_da {
+  font-size: 40rpx;
+  color: #d34c4c;
+}
+
+.tui_ul .tui_li .tui_chu {
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 26rpx;
+  color: #fff;
+  height: 43rpx;
+  line-height: 43rpx;
+  padding: 0 10rpx;
+}
+.wu_xianlu{
+  width: 596rpx;
+  height: 516rpx;
+  display: block;
+  margin: auto;
+}
+
+.two{
+  position: absolute;
+  top:528rpx;
+  left: 142rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+.two text{
+  font-size: 50rpx;
+  color: #FFDE8E;
+}

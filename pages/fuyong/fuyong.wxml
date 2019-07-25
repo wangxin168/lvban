@@ -1,0 +1,16 @@
+<!--pages/fuyong/fuyong.wxml-->
+<!-- <text>pages/fuyong/fuyong.wxml</text> -->
+<template name="odd">
+    <view class='shouci_box'>
+      <image src='../img/home/shouci.png' class='shouci_bei'></image>
+      <view class='one'>请您进行小程序授权，</view>
+      
+      <view class='three'>老用户可体验更多精彩内容。</view>
+      <view class='four'>
+        <!-- <image src='../img/home/qvxiao.png' bindtap='qvxiao'></image> -->
+        <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="shouci">
+          <image src='../img/home/shou_shou.png'></image>
+        </button>
+      </view>
+    </view>
+</template>

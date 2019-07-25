@@ -1,0 +1,56 @@
+<!--pages/dingdan/dingdan.wxml-->
+<!-- <text>pages/dingdan/dingdan.wxml</text> -->
+<import src="../fuyong/fuyong.wxml" />
+<view class='baise' wx:if="{{all_info_data==''}}"></view>
+<view class='ding_ul'>
+  <view class='ding_li' data-type='{{item.type}}' data-id="{{item.order_sn}}" bindtap='dingxiang' wx:for="{{all_info_data}}" wx:key="{{index}}" data-isdel="{{item.is_del}}">
+    <view class='ding_top'>
+      <view class='ing_left'>
+        <image src='{{item.images_thumb}}' class='img_left'></image>
+        <view class='ding_chu'>{{item.departure_place}}出发</view>
+      </view>
+      <view class='ding_right'>
+        <view class='ding_tit'>{{item.route_name}}</view>
+        <view class='ding_time'>出行时间：
+          <text>{{item.departure_time}}</text>
+        </view>
+        <view class='chengren'>成人
+          <text>{{item.adult_num}}</text>个 儿童
+          <text>{{item.child_num}}</text>个 
+        </view>
+        <text wx:if="{{item.is_refund==1}}" style='color:#EA4B34;' class='chuxing'>已退款</text>
+        <view class='chuxing' wx:if="{{item.is_refund==0}}">
+          <view wx:if='{{item.status==0&&item.type==1}}'>未出行
+            <text>(出行后可获得{{item.integral}}积分)</text>
+          </view>
+          <view wx:if='{{item.status==1&&item.type==1}}' style='color: #28AB48;'>已出行
+            <text>(已获得{{item.integral}}积分)</text>
+          </view>
+          <view wx:if='{{item.status==0&&item.type==2}}'>未出行
+            <text>(免费抽奖获得)</text>
+          </view>
+          <view wx:if='{{item.status==1&&item.type==2}}' style='color: #28AB48;'>已出行
+            <text>(免费抽奖获得)</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='xian'></view>
+    <view class='ding_bott'>
+      <view class='bott_left'>订单编号：
+        <text>{{item.order_sn}}</text>
+      </view>
+      <view class='bott_right' wx:if="{{item.type==1}}">总价
+        <text>{{item.money}}</text>元</view>
+      <view class='bott_right' wx:if="{{item.type==2}}">价值
+        <text>{{item.money}}</text>元</view>
+    </view>
+  </view>
+  <image src='../img/home/wu_dingdan.png' class='wu_xianlu' wx:if="{{all_info_data == '' }}"></image>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>

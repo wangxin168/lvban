@@ -1,0 +1,42 @@
+<!--pages/holvban/holvban.wxml-->
+<import src="../fuyong/fuyong.wxml" />
+<view style='position:{{position}}'>
+  <image src='../img/lb/bg.jpg' class='lb_bg'></image>
+  <view class='holv_header'>
+    <view class='holv_header_cont'>
+      <view class='holv_header_cont_left' bindtap='get_lv_list'>
+        <view><image src='../img/lb/1.png' class='holv_tb'></image></view>
+        <view>
+          <text class='holv_num'>{{yq_count}}</text>
+          <view class='holv_text'>累计邀请（人）</view>  
+        </view>
+      </view>
+      <view class='holv_header_cont_right' bindtap='get_prize_list'>
+        <view><image src='../img/lb/2.png' class='holv_tb2'></image></view>
+        <view>
+          <text class='holv_num'>{{integral}}</text>
+          <view class='holv_text'>累计获得积分</view>  
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='holv_footer'>
+    <view class='holv_footer_cont'>
+      <view class='holb_footer_title_box'>
+        <image src='../img/lb/3.png' class='holb_footer_title'></image>
+        <view>每邀请一位旅伴注册拿<text>{{yq_score}}</text>积分</view>
+        <view>旅伴购买旅游线路，我拿积分，旅伴的旅伴</view>   
+        <view>购买旅游线路，我也拿积分</view>
+        <image src='../img/lb/4.jpg' class='lv_img'></image>
+      </view>
+    </view>
+  </view>
+  <view class="yaoqing_btn"><button open-type='share'>立即邀请好友</button></view>
+</view>
+<view class='shouci' wx:if="{{shouci}}">
+  <template is="odd" />
+  <view class='two'>
+    新用户可领取
+    <text>{{jiangli}}</text>积分奖励，</view>
+</view>
+<image class='xuanfu' src='../img/home/fanhui.png' wx:if="{{my_uid}}" bindtap='fanhui'></image>

@@ -1,0 +1,86 @@
+/* pages/wode/wode.wxss */
+@import "../fuyong/fuyong.wxss";
+page {
+  background: #f2f2f2;
+}
+.shouci{
+  background: rgba(0, 0, 0, 0.8);
+}
+.touxiang {
+  width: 100%;
+  position: relative;
+  height: 321rpx;
+}
+
+.touxiang .beij {
+  width: 100%;
+  height: 100%;
+}
+
+.tou_img {
+  position: absolute;
+  width: 148rpx;
+  height: 148rpx;
+  top: 17rpx;
+  left: 302rpx;
+  border-radius: 50%;
+  border: 2rpx solid white;
+  overflow: hidden;
+}
+
+.tou_img image {
+  width: 148rpx;
+  height: 148rpx;
+}
+
+.nicheng {
+  position: absolute;
+  font-size: 36rpx;
+  color: #fff;
+  top: 170rpx;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.jifen {
+  width: 100%;
+  position: absolute;
+  font-size: 36rpx;
+  color: #fff;
+  top: 226rpx;
+  left: 0rpx;
+  text-align: center;
+}
+
+.new_ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new_ul .new_li{
+  width: 250rpx;
+  height: 250rpx;
+  background: #fff;
+  text-align: center;
+}
+
+.new_ul .new_li image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 74rpx;
+}
+.new_li .dingd{
+  text-align: center;
+  font-size: 34rpx;
+  color: #909090;
+}
+button{
+  background: none!important;
+  border:none!important;
+  line-height: 1.3;
+}
+button::after{
+  border:none;
+}

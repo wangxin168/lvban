@@ -1,0 +1,30 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.hint_message{
+  width:100%;
+  height:90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.two{
+  position: absolute;
+  top:528rpx;
+  left: 142rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+.two text{
+  font-size: 50rpx;
+  color: #FFDE8E;
+}

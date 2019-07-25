@@ -1,0 +1,9 @@
+<!--pages/rule/rule.wxml-->
+<!-- <text>pages/rule/rule.wxml</text> -->
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../towxml/entry.wxml"/>
+<!-- 文案 -->
+<view class='xianlu_con'>
+  <!-- <template is="wxParse" data="{{wxParseData:contents.nodes}}" /> -->
+  <template is="entry" data="{{...article}}"/>
+</view>

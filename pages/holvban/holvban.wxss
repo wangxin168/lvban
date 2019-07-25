@@ -1,0 +1,95 @@
+/* pages/holvban/holvban.wxss */
+@import "../fuyong/fuyong.wxss";
+.lb_bg{
+  width:750rpx;
+  height:1620rpx;
+  position: absolute;
+  left:0;
+  top:0;
+  bottom: 0;
+  right: 0;
+  z-index: -11;
+}
+.holv_header{
+  padding:0 30rpx;
+}
+.holv_header_cont{
+  display: flex;
+  margin-top: 440rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  padding: 40rpx 25rpx;
+  width:100%;
+  box-sizing: border-box;
+}
+.holv_tb{
+  width:70rpx;
+  height: 70rpx;
+  margin: 10rpx 25rpx 0 0;
+}
+.holv_header_cont_left{
+  display: flex;
+  width:50%;
+  border-right: 1px solid #D8D8D8;
+  box-sizing: border-box;
+}
+.holv_num{
+  font-size: 36rpx;
+  color: #404040;
+}
+.holv_text{
+  font-size: 30rpx;
+  color: #A1A1A1; 
+}
+.holv_header_cont_right{
+  width: 50%;
+  display: flex;
+}
+.holv_tb2{
+  width:70rpx;
+  height: 70rpx;
+  margin: 10rpx 25rpx 0 25rpx;
+}
+.holv_footer{
+  padding:0 30rpx;
+}
+.holv_footer_cont{
+  width:100%;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.holb_footer_title_box{
+  text-align: center;
+  font-size: 30rpx;
+  color: #7E7E7E;
+  line-height: 46rpx;
+}
+.holb_footer_title{
+  width:280rpx;
+  height: 65rpx;
+  margin-bottom: 30rpx;
+}
+.lv_img{
+  width:690rpx;
+  height:725rpx;
+}
+.yaoqing_btn button{
+  width:100%;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  background: #EA4B34;
+  margin-top: 30rpx;
+  border-radius:0;
+  border:none;
+}
+.xuanfu{
+  position: fixed;
+  bottom: 300rpx;
+  right: 50rpx;
+  width: 128rpx;
+  height: 128rpx;
+}

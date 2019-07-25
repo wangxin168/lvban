@@ -1,0 +1,69 @@
+/* pages/fuyong/fuyong.wxss */
+.shouci{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.shouci_box{
+  width: 536rpx;
+  height: 717rpx;
+  margin: 129rpx auto 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.shouci_box .shouci_bei{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+}
+.shouci_box .one{
+  margin-top: 337rpx;
+  font-size: 36rpx;
+color: #FFFFFF;
+}
+.shouci_box .two{
+  font-size: 36rpx;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  position: absolute;
+  top: 50rpx;
+  left: 30rpx;
+}
+.shouci_box .two text{
+  font-size: 50rpx;
+  color: #FFDE8E;
+}
+.shouci_box .three{
+  font-size: 30rpx;
+  color: #FFFFFF;
+  margin-top:90rpx;
+}
+.shouci_box .four{
+  width: 501rpx;
+  height: 84rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 57rpx auto 0;
+}
+.shouci_box .four button{
+  width: 244rpx;
+  height: 84rpx;
+  background: none!important;
+  border: none!important;
+  padding: 0!important;
+}
+.shouci_box .four image{
+  width: 244rpx;
+  height: 84rpx;
+}

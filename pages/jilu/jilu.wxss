@@ -1,0 +1,114 @@
+@import "../fuyong/fuyong.wxss";
+page{
+  background: #F2F2F2;
+}
+.ding_ul{
+  width: 720rpx;
+  margin: auto;
+  padding-bottom: 30rpx;
+}
+.ding_ul .ding_li{
+  width: 100%;
+  /* height: 340rpx; */
+  background: white;
+  margin-top: 22rpx;
+  box-shadow: 0 6rpx 5rpx 0 rgba(225,225,225,0.50);
+  border-radius: 6rpx;
+  padding: 26rpx 26rpx 23rpx 22rpx;
+  box-sizing: border-box;
+}
+.ding_top{
+  display: flex;
+}
+.ding_top .ing_left{
+  width: 188rpx;
+  height: 188rpx;
+  position: relative;
+}
+.ding_chu{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: 47rpx;
+  line-height: 47rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.6)
+}
+.ding_top .ing_left .img_left{
+  width: 100%;
+  height: 100%;
+}
+.ding_top .ding_right{
+  margin-left: 20rpx;
+  height: 188rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.ding_top .ding_right .ding_tit{
+  font-size: 36rpx;
+  color: #404040;
+}
+.ding_top .ding_right .ding_time{
+  font-size: 32rpx;
+color: #898989;
+}
+.ding_top .ding_right .chengren{
+  font-size: 32rpx;
+color: #898989;
+}
+.ding_top .ding_right .chengren text:nth-of-type(2){
+  font-size: 38rpx;
+color: #D34C4C;
+}
+.ding_top .ding_right .chuxing{
+  font-size: 32rpx;
+color: #898989;
+}
+
+.xian{
+  width: 100%;
+  height: 2rpx;
+  background: #D8D8D8;
+  margin-top: 29rpx;
+}
+.ding_bott{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 28rpx;
+}
+.bott_left{
+  font-size: 30rpx;
+color: #737373;
+}
+.bott_right{
+  font-size: 32rpx;
+color: #D34C4C;
+font-family: "Helvetica";
+}
+.xuanfu{
+  position: fixed;
+  bottom: 300rpx;
+  right: 50rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.wu_xianlu{
+  width: 596rpx;
+  height: 516rpx;
+  display: block;
+  margin: 100rpx auto;
+}
+.baise{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: white;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
